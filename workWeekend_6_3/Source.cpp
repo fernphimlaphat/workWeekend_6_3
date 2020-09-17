@@ -14,36 +14,46 @@ void good2(int price) {
 
 	do {
 
-	scanf_s("%d", &price2);
-	num[i] = price2;
+		scanf_s("%d", &price2);
 
-	if (num[i] == 1)
-	{
-		num[i] = 60;
-		printf("%d Baht\n", num[i]);
-	}
-	else if (num[i] == 2)
-	{
-		num[i] = 120;
-		printf("%d Baht\n", num[i]);
+		if (price2 > 0 && price2 <= price) {
+			num[i] = price2;
 
-	}
-	else if (num[i] == 3)
-	{
-		num[i] = 50;
-		printf("%d Baht\n", num[i]);
+			if (num[i] == 1)
+			{
+				num[i] = 60;
+				printf("%d Baht\n", num[i]);
+			}
+			else if (num[i] == 2)
+			{
+				num[i] = 120;
+				printf("%d Baht\n", num[i]);
 
-	}
-	else if (num[i] == 4)
-	{
-		num[i] = 30;
-		printf("%d Baht\n", num[i]);
+			}
+			else if (num[i] == 3)
+			{
+				num[i] = 50;
+				printf("%d Baht\n", num[i]);
 
-	}
-	sum += num[i];
-	i++;
-	} while (i < price);
-	printf("\nAll goods = %d\n", sum);
+			}
+			else if (num[i] == 4)
+			{
+				num[i] = 30;
+				printf("%d Baht\n", num[i]);
+
+			}
+			sum += num[i];
+			i++;
+		}
+
+		else
+		{
+			printf("Try again : ");
+		}
+
+		} while (i < price);
+		printf("\nAll goods = %d\n", sum);
+	
 
 
 }
@@ -51,7 +61,7 @@ void good2(int price) {
 int main()
 {
 	int price , i = 0,price2,num[5],sum = 0;
-	printf("How many to buy : ");
+	printf("How many to buy (Max = 4) : ");
 	scanf_s("%d", &price);
 
 
